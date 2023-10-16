@@ -28,16 +28,19 @@ function setup() {
   game = new Game();
   game.getState();
   game.start();
-bgImg = backgroundImage;
 }
 
 function draw() {
-  background(bgImg);
+  background(backgroundImage);
   if (gameState === 1){
     game.play();
   }
   if (playerCount === 2){
     game.update(1);
+  }
+  if (gameState === 2){
+    game.showLeaderboard();
+    game.end();
   }
 }
 
